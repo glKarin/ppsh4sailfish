@@ -12,7 +12,7 @@
 static QString adjustPath(const QString &path)
 {
 	const QString pathInInstallDir =
-		QString::fromLatin1("%1/../%2").arg(QCoreApplication::applicationDirPath(), path);
+		QString::fromLatin1("%1/%2").arg("/usr/share/ppsh/", path);
 	if (QFileInfo(pathInInstallDir).exists())
 		return pathInInstallDir;
 	return path;

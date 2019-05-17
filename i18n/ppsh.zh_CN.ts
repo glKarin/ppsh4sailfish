@@ -1068,7 +1068,7 @@
     <message>
         <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="410"/>
         <source>Dash format(extras audio maybe not synchronize with video)...</source>
-				<translation type="unfinished">Dash格式(外部音频可能与画面不同步)...</translation>
+        <translation type="unfinished">Dash格式(外部音频可能与画面不同步)...</translation>
     </message>
     <message>
         <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="425"/>

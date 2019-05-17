@@ -43,7 +43,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	qmdir = "i18n/";
 #else
 	qm = QString(ID_PKG ".") + locale;
-	qmdir = "/opt/" ID_PKG "/i18n/";
+	qmdir = "/usr/share/" ID_PKG "/i18n/";
 #endif
 #else
 #ifdef _DBG

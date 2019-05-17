@@ -11,8 +11,6 @@ js.target = qml
 DEPLOYMENTFOLDERS += js
 
 QT += network sql xml widgets multimedia
-CONFIG += mobility
-MOBILITY += multimedia
 INCLUDEPATH += . src src/qtm
 DEFINES += _KARIN_MM_EXTENSIONS
 MOC_DIR = .moc
@@ -20,7 +18,7 @@ OBJECTS_DIR = .obj
 
 DEFINES += _HARMATTAN
 DEFINES += _SAILFISH
-DEFINES += _DBG
+#DEFINES += _DBG
 DEFINES += _MAEMO_MEEGOTOUCH_INTERFACES_DEV
 CONFIG += videosuiteinterface-maemo-meegotouch
 #PKGCONFIG += zlib
@@ -48,7 +46,7 @@ SOURCES += main.cpp \
 		src/player.cpp
 
 splash.files = res/ppsh_splash_natasha.jpg
-splash.path = /opt/ppsh/res
+splash.path = /usr/share/ppsh/res
 
 i18n.source = i18n
 i18n.target = .
@@ -60,18 +58,29 @@ INSTALLS += splash
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
 qtcAddDeployment()
 
-OTHER_FILES += \
-    qtc_packaging/debian_harmattan/rules \
-    qtc_packaging/debian_harmattan/README \
-    qtc_packaging/debian_harmattan/manifest.aegis \
-    qtc_packaging/debian_harmattan/copyright \
-    qtc_packaging/debian_harmattan/control \
-    qtc_packaging/debian_harmattan/compat \
-    qtc_packaging/debian_harmattan/changelog
-
 HEADERS += \
     src/utility.h \
     src/networkmanager.h \
     src/networkconnector.h \
     src/id_std.h \
 		src/player.h
+
+
+		DISTFILES += \
+		qml/ppsh_sailfish/* \
+		qml/js/* \
+		qml/ppsh_sailfish/component/* \
+		rpm/ppsh.changes.in \
+		rpm/ppsh.changes.run.in \
+		rpm/ppsh.spec \
+		rpm/ppsh.yaml \
+		i18n/*.ts \
+		ppsh80.png \
+		ppsh.desktop
+
+		# to disable building translations every time, comment out the
+		# following CONFIG line
+		CONFIG += sailfishapp_i18n
+
+		#TRANSLATIONS += i18n/ppsh.zh_CN.ts
+

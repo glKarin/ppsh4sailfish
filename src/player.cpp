@@ -7,7 +7,7 @@
 #ifdef _DBG
 #define ID_KMPLAYER_PATH "./kmplayer++_src/kmplayer++/src/kmplayer++"
 #else
-#define ID_KMPLAYER_PATH "/opt/ppsh/kmplayer++/bin/kmplayer++"
+#define ID_KMPLAYER_PATH "/usr/share/ppsh/kmplayer++/bin/kmplayer++"
 #endif
 
 idPlayer::idPlayer(QObject *parent)

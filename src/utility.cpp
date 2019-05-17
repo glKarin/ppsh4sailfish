@@ -35,7 +35,7 @@ namespace id
 		_tDefaultSettings.insert("generals/night_mode", false);
 		_tDefaultSettings.insert("generals/default_browser", 1);
 		_tDefaultSettings.insert("generals/touch_icon_drag", false);
-		_tDefaultSettings.insert("generals/fullscreen", true);
+		_tDefaultSettings.insert("generals/fullscreen", false);
 
 		_tDefaultSettings.insert("player/open_danmaku", true);
 		_tDefaultSettings.insert("player/danmaku_opacity", 1.0);
