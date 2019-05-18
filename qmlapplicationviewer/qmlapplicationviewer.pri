@@ -1,4 +1,4 @@
-pkgconfig(sailfishapp)
+#pkgconfig(sailfishapp)
 CONFIG += sailfishapp
 
 QT += quick qml 

@@ -1,4 +1,8 @@
 Name: ppsh
+%{!?qtc_qmake:%define qtc_qmake %qmake}
+%{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
+%{!?qtc_make:%define qtc_make make}
+%{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary: PPSH is a web-video player for Bilibili.
 Version: 43.0.3harmattan1
 Release: 1
@@ -10,7 +14,7 @@ License: GPLv2
 # This must be generated before uploading a package to a remote build service.
 # Usually this line does not need to be modified.
 Source0: %{name}.tar.gz
-BuildRoot:	%(mktemp -ud %{name})
+#BuildRoot:	%(mktemp -ud %{name})
 BuildRequires:	pkgconfig(sailfishapp) >= 1.0.2
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Qml)
@@ -21,6 +25,7 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(Qt5Multimedia)
 BuildRequires:	pkgconfig(Qt5Sql)
 Requires: sailfishsilica-qt5 >= 0.10.9 
+Requires:   libkeepalive
 
 %description
 %{summary}

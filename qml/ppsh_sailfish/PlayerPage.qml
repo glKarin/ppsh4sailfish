@@ -3,6 +3,7 @@ import Sailfish.Silica 1.0
 import "component"
 import "../js/main.js" as Script
 import "../js/util.js" as Util
+import Nemo.KeepAlive 1.1
 
 BasePage {
 	id: root;
@@ -117,7 +118,12 @@ BasePage {
 		}
 	}
 
+    Component.onCompleted: {
+        DisplayBlanking.preventBlanking = true;
+    }
+
 	Component.onDestruction: {
 		loader._DeInit();
+        DisplayBlanking.preventBlanking = false;
 	}
 }
