@@ -417,7 +417,11 @@ bool QDeclarativePlaylist::save(const QUrl &location, const QString &format)
 */
 bool QDeclarativePlaylist::addItem(const QUrl &source)
 {
+#ifdef _KARIN_MM_EXTENSIONS
     return m_playlist->addMedia(MediaContent(source));
+#else
+    return m_playlist->addMedia(source);
+#endif
 }
 
 /*!
@@ -429,7 +433,11 @@ bool QDeclarativePlaylist::addItem(const QUrl &source)
 */
 bool QDeclarativePlaylist::insertItem(int index, const QUrl &source)
 {
+#ifdef _KARIN_MM_EXTENSIONS
     return m_playlist->insertMedia(index, MediaContent(source));
+#else
+    return m_playlist->insertMedia(index, source);
+#endif
 }
 
 /*!

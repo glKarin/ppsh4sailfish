@@ -26,5 +26,6 @@ struct QmlApplicationViewer
 };
 
 QGuiApplication *createApplication(int &argc, char **argv);
+QString adjustPath(const QString &path);
 
 #endif // QMLAPPLICATIONVIEWER_H

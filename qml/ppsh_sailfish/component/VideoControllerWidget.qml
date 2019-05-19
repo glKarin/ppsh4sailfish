@@ -250,6 +250,7 @@ Item{
 							else controller._ShowMessage(qsTr("Video source is empty"));
 						}
 					}
+					/*
 					Button{
 						anchors.horizontalCenter: parent.horizontalCenter;
 						text: qsTr("Open externally");
@@ -260,6 +261,7 @@ Item{
 							root.playExternally(video.source);
 						}
 					}
+					*/
 				}
 			}
 			VerticalScrollDecorator{

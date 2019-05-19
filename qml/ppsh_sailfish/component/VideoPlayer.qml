@@ -1,5 +1,6 @@
 import QtQuick 2.0
 import Sailfish.Silica 1.0
+import Nemo.KeepAlive 1.1
 import "../../js/main.js" as Script
 import "../../js/util.js" as Util
 
@@ -528,8 +529,13 @@ Rectangle {
 		_PLAYER.Stop();
 	}
 
+	Component.onCompleted: {
+		DisplayBlanking.preventBlanking = true;
+	}
+
 	Component.onDestruction: {
 		//console.log("********** video player destroyed");
+		DisplayBlanking.preventBlanking = false;
 		_DeInit();
 	}
 

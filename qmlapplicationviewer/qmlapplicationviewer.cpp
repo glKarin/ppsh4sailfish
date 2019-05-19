@@ -9,13 +9,19 @@
 #include <QQmlContext>
 #include <QQuickView>
 
-static QString adjustPath(const QString &path)
+QString adjustPath(const QString &path)
 {
+#ifdef _DBG
+#define _PREFIX "./"
+#else
+#define _PREFIX "/usr/share/ppsh/"
+#endif
 	const QString pathInInstallDir =
-		QString::fromLatin1("%1/%2").arg("/usr/share/ppsh/", path);
+		QString::fromLatin1("%1/%2").arg(_PREFIX, path);
 	if (QFileInfo(pathInInstallDir).exists())
 		return pathInInstallDir;
 	return path;
+#undef _PREFIX
 }
 
 QmlApplicationViewer::QmlApplicationViewer()

@@ -4,7 +4,7 @@ import "itemlist.js" as L
 Row{
 	id: root;
 	objectName: "idButtonRow";
-	height: 80;
+	height: Theme.horizontalPageMargin;
 	clip: true;
 
 	property bool exclusive: true;

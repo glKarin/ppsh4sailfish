@@ -175,6 +175,12 @@ ApplicationWindow {
 				icon: "share",
 				func: "controller._OpenTestRequestPage();",
 			});
+			Util.ModelPush(menu.model, {
+				label: "Test video",
+				name: "TestVideo",
+				icon: "play",
+				func: "controller._OpenTestVideoPage();",
+			});
 		}
 		else
 		{

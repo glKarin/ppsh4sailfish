@@ -12,7 +12,7 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -D_KARIN_MM_EXTENSIONS -D_HARMATTAN -D_SAILFISH -D_DBG -D_MAEMO_MEEGOTOUCH_INTERFACES_DEV -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_XML_LIB -DQT_CORE_LIB
+DEFINES       = -D_KARIN_MM_EXTENSIONS -D_HARMATTAN -D_SAILFISH -D_MAEMO_MEEGOTOUCH_INTERFACES_DEV -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB -DQT_QUICK_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_XML_LIB -DQT_CORE_LIB
 CFLAGS        = -pipe -O2 -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -O2 -std=gnu++0x -fPIC -fvisibility=hidden -fvisibility-inlines-hidden -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I. -I. -Isrc -Isrc/qtm -Iqmlapplicationviewer -isystem /usr/include/sailfishapp -isystem /usr/include/mdeclarativecache5 -isystem /usr/include/qt5 -isystem /usr/include/qt5/QtWidgets -isystem /usr/include/qt5/QtMultimedia -isystem /usr/include/qt5/QtQuick -isystem /usr/include/qt5/QtGui -isystem /usr/include/qt5/QtQml -isystem /usr/include/qt5/QtNetwork -isystem /usr/include/qt5/QtSql -isystem /usr/include/qt5/QtXml -isystem /usr/include/qt5/QtCore -I.moc -I/usr/share/qt5/mkspecs/linux-g++
@@ -77,7 +77,17 @@ OBJECTS       = .obj/qdeclarativeaudio.o \
 		.obj/moc_networkmanager.o \
 		.obj/moc_networkconnector.o \
 		.obj/moc_player.o
-DIST          = /usr/share/qt5/mkspecs/features/spec_pre.prf \
+DIST          = qml/ppsh_sailfish/* \
+		qml/js/* \
+		qml/ppsh_sailfish/component/* \
+		rpm/ppsh.changes.in \
+		rpm/ppsh.changes.run.in \
+		rpm/ppsh.spec \
+		rpm/ppsh.yaml \
+		i18n/*.ts \
+		ppsh80.png \
+		ppsh.desktop \
+		/usr/share/qt5/mkspecs/features/spec_pre.prf \
 		/usr/share/qt5/mkspecs/common/unix.conf \
 		/usr/share/qt5/mkspecs/common/linux.conf \
 		/usr/share/qt5/mkspecs/common/sanitize.conf \
@@ -130,6 +140,7 @@ DIST          = /usr/share/qt5/mkspecs/features/spec_pre.prf \
 		qmlapplicationviewer/qmlapplicationviewer.pri \
 		/usr/share/qt5/mkspecs/features/resolve_config.prf \
 		/usr/share/qt5/mkspecs/features/default_post.prf \
+		/usr/share/qt5/mkspecs/features/sailfishapp_i18n.prf \
 		/usr/share/qt5/mkspecs/features/sailfishapp.prf \
 		/usr/share/qt5/mkspecs/features/link_pkgconfig.prf \
 		/usr/share/qt5/mkspecs/features/warn_on.prf \
@@ -226,6 +237,7 @@ Makefile: ppsh.pro /usr/share/qt5/mkspecs/linux-g++/qmake.conf /usr/share/qt5/mk
 		qmlapplicationviewer/qmlapplicationviewer.pri \
 		/usr/share/qt5/mkspecs/features/resolve_config.prf \
 		/usr/share/qt5/mkspecs/features/default_post.prf \
+		/usr/share/qt5/mkspecs/features/sailfishapp_i18n.prf \
 		/usr/share/qt5/mkspecs/features/sailfishapp.prf \
 		/usr/share/qt5/mkspecs/features/link_pkgconfig.prf \
 		/usr/share/qt5/mkspecs/features/warn_on.prf \
@@ -304,6 +316,7 @@ Makefile: ppsh.pro /usr/share/qt5/mkspecs/linux-g++/qmake.conf /usr/share/qt5/mk
 qmlapplicationviewer/qmlapplicationviewer.pri:
 /usr/share/qt5/mkspecs/features/resolve_config.prf:
 /usr/share/qt5/mkspecs/features/default_post.prf:
+/usr/share/qt5/mkspecs/features/sailfishapp_i18n.prf:
 /usr/share/qt5/mkspecs/features/sailfishapp.prf:
 /usr/share/qt5/mkspecs/features/link_pkgconfig.prf:
 /usr/share/qt5/mkspecs/features/warn_on.prf:
@@ -427,7 +440,8 @@ compiler_clean: compiler_moc_header_clean
 		src/networkconnector.h \
 		src/networkmanager.h \
 		src/qtm/qdeclarativeaudio_p.h \
-		src/qtm/qdeclarativeplaylist_p.h
+		src/qtm/qdeclarativeplaylist_p.h \
+		src/qtm/qdeclarativemediametadata_p.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o .obj/main.o main.cpp
 
 .obj/utility.o: src/utility.cpp src/utility.h \
@@ -474,66 +488,66 @@ compiler_clean: compiler_moc_header_clean
 ####### Install
 
 install_splash: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/ppsh/res || mkdir -p $(INSTALL_ROOT)/opt/ppsh/res
-	-$(INSTALL_FILE) /home/nemo/qt/ppsh/res/ppsh_splash_natasha.jpg $(INSTALL_ROOT)/opt/ppsh/res/
+	@test -d $(INSTALL_ROOT)/usr/share/ppsh/res || mkdir -p $(INSTALL_ROOT)/usr/share/ppsh/res
+	-$(INSTALL_FILE) /home/nemo/qt/ppsh/res/ppsh_splash_natasha.jpg $(INSTALL_ROOT)/usr/share/ppsh/res/
 
 uninstall_splash: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/ppsh/res/ppsh_splash_natasha.jpg
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/ppsh/res/ 
-
-
-install_itemfolder_01: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/ppsh/qml || mkdir -p $(INSTALL_ROOT)/opt/ppsh/qml
-	-$(INSTALL_DIR) /home/nemo/qt/ppsh/qml/PPSH $(INSTALL_ROOT)/opt/ppsh/qml/
-
-uninstall_itemfolder_01: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/ppsh/qml/PPSH
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/ppsh/qml/ 
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/usr/share/ppsh/res/ppsh_splash_natasha.jpg
+	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/ppsh/res/ 
 
 
 install_itemjs: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/ppsh/qml || mkdir -p $(INSTALL_ROOT)/opt/ppsh/qml
-	-$(INSTALL_DIR) /home/nemo/qt/ppsh/qml/js $(INSTALL_ROOT)/opt/ppsh/qml/
+	@test -d $(INSTALL_ROOT)/usr/share/ppsh/qml || mkdir -p $(INSTALL_ROOT)/usr/share/ppsh/qml
+	-$(INSTALL_DIR) /home/nemo/qt/ppsh/qml/js $(INSTALL_ROOT)/usr/share/ppsh/qml/
 
 uninstall_itemjs: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/ppsh/qml/js
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/ppsh/qml/ 
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/usr/share/ppsh/qml/js
+	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/ppsh/qml/ 
 
 
 install_itemi18n: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/ppsh/. || mkdir -p $(INSTALL_ROOT)/opt/ppsh/.
-	-$(INSTALL_DIR) /home/nemo/qt/ppsh/i18n $(INSTALL_ROOT)/opt/ppsh/./
+	@test -d $(INSTALL_ROOT)/usr/share/ppsh/. || mkdir -p $(INSTALL_ROOT)/usr/share/ppsh/.
+	-$(INSTALL_DIR) /home/nemo/qt/ppsh/i18n $(INSTALL_ROOT)/usr/share/ppsh/./
 
 uninstall_itemi18n: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/ppsh/./i18n
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/ppsh/./ 
-
-
-install_itemfolder_01: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/ppsh/qml || mkdir -p $(INSTALL_ROOT)/opt/ppsh/qml
-	-$(INSTALL_DIR) /home/nemo/qt/ppsh/qml/PPSH $(INSTALL_ROOT)/opt/ppsh/qml/
-
-uninstall_itemfolder_01: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/ppsh/qml/PPSH
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/ppsh/qml/ 
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/usr/share/ppsh/./i18n
+	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/ppsh/./ 
 
 
 install_itemjs: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/ppsh/qml || mkdir -p $(INSTALL_ROOT)/opt/ppsh/qml
-	-$(INSTALL_DIR) /home/nemo/qt/ppsh/qml/js $(INSTALL_ROOT)/opt/ppsh/qml/
+	@test -d $(INSTALL_ROOT)/usr/share/ppsh/qml || mkdir -p $(INSTALL_ROOT)/usr/share/ppsh/qml
+	-$(INSTALL_DIR) /home/nemo/qt/ppsh/qml/js $(INSTALL_ROOT)/usr/share/ppsh/qml/
 
 uninstall_itemjs: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/ppsh/qml/js
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/ppsh/qml/ 
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/usr/share/ppsh/qml/js
+	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/ppsh/qml/ 
 
 
 install_itemi18n: first FORCE
-	@test -d $(INSTALL_ROOT)/opt/ppsh/. || mkdir -p $(INSTALL_ROOT)/opt/ppsh/.
-	-$(INSTALL_DIR) /home/nemo/qt/ppsh/i18n $(INSTALL_ROOT)/opt/ppsh/./
+	@test -d $(INSTALL_ROOT)/usr/share/ppsh/. || mkdir -p $(INSTALL_ROOT)/usr/share/ppsh/.
+	-$(INSTALL_DIR) /home/nemo/qt/ppsh/i18n $(INSTALL_ROOT)/usr/share/ppsh/./
 
 uninstall_itemi18n: FORCE
-	-$(DEL_FILE) -r $(INSTALL_ROOT)/opt/ppsh/./i18n
-	-$(DEL_DIR) $(INSTALL_ROOT)/opt/ppsh/./ 
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/usr/share/ppsh/./i18n
+	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/ppsh/./ 
+
+
+install_icon80: first FORCE
+	@test -d $(INSTALL_ROOT)/usr/share/icons/hicolor/80x80/apps || mkdir -p $(INSTALL_ROOT)/usr/share/icons/hicolor/80x80/apps
+	-$(INSTALL_FILE) /home/nemo/qt/ppsh/ppsh80.png $(INSTALL_ROOT)/usr/share/icons/hicolor/80x80/apps/
+
+uninstall_icon80: FORCE
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/usr/share/icons/hicolor/80x80/apps/ppsh80.png
+	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/icons/hicolor/80x80/apps/ 
+
+
+install_desktopfile: first FORCE
+	@test -d $(INSTALL_ROOT)/usr/share/applications || mkdir -p $(INSTALL_ROOT)/usr/share/applications
+	-$(INSTALL_FILE) /home/nemo/qt/ppsh/ppsh.desktop $(INSTALL_ROOT)/usr/share/applications/
+
+uninstall_desktopfile: FORCE
+	-$(DEL_FILE) -r $(INSTALL_ROOT)/usr/share/applications/ppsh.desktop
+	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/applications/ 
 
 
 install_target: first FORCE
@@ -544,6 +558,11 @@ install_target: first FORCE
 uninstall_target: FORCE
 	-$(DEL_FILE) $(INSTALL_ROOT)/usr/bin/$(QMAKE_TARGET)
 	-$(DEL_DIR) $(INSTALL_ROOT)/usr/bin/ 
+
+
+install_qm: first FORCE
+	@test -d $(INSTALL_ROOT)/usr/share/ppsh/translations || mkdir -p $(INSTALL_ROOT)/usr/share/ppsh/translations
+	lupdate -noobsolete /home/nemo/qt/ppsh/src /home/nemo/qt/ppsh/qml -ts /home/nemo/qt/ppsh/translations/ppsh.ts && mkdir -p translations && [ "/home/nemo/qt/ppsh" != "/home/nemo/qt/ppsh" -a 0 -eq 1 ] && cp -af /home/nemo/qt/ppsh/translations || : ; [ 0 -eq 1 ] && lrelease -nounfinished || :
 
 
 install_qml: first FORCE
@@ -575,9 +594,9 @@ uninstall_desktop: FORCE
 	-$(DEL_DIR) $(INSTALL_ROOT)/usr/share/applications/ 
 
 
-install: install_splash install_itemfolder_01 install_itemjs install_itemi18n install_itemfolder_01 install_itemjs install_itemi18n install_target install_qml install_target install_desktop  FORCE
+install: install_splash install_itemjs install_itemi18n install_itemjs install_itemi18n install_icon80 install_desktopfile install_target install_qm install_qml install_target install_desktop  FORCE
 
-uninstall: uninstall_splash uninstall_itemfolder_01 uninstall_itemjs uninstall_itemi18n uninstall_itemfolder_01 uninstall_itemjs uninstall_itemi18n uninstall_target uninstall_qml uninstall_target uninstall_desktop  FORCE
+uninstall: uninstall_splash uninstall_itemjs uninstall_itemi18n uninstall_itemjs uninstall_itemi18n uninstall_icon80 uninstall_desktopfile uninstall_target uninstall_qml uninstall_target uninstall_desktop  FORCE
 
 FORCE:
 

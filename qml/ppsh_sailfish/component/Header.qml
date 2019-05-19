@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import Sailfish.Silica 1.0
 
 Rectangle {
     id: root;
@@ -18,8 +19,22 @@ Rectangle {
     height: constants._iHeaderHeight;
     z: constants._iHeaderZ;
 
-    color: constants._cGlobalColor;
+		color: settings.bFullscreen ? constants._cGlobalColor : constants._cTransparent;
     clip: true;
+
+		PageHeader{
+			anchors.fill: parent;
+			title: title.text;
+			leftMargin: root.iTextMargin;
+			rightMargin: root.iTextMargin;
+			visible: !settings.bFullscreen;
+			Separator{
+				anchors.bottom: parent.bottom;
+				anchors.horizontalCenter: parent.horizontalCenter;
+				width: parent.width - Theme.horizontalPageMargin * 2;
+				color: Theme.secondaryColor;
+			}
+		}
 
     Text{
         id: title;
@@ -35,6 +50,7 @@ Rectangle {
         font.bold: true;
         clip: true;
         color: constants._cHeaderTitleColor;
+				visible: settings.bFullscreen;
     }
 
     MouseArea{

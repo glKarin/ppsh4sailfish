@@ -15,6 +15,7 @@
 #ifdef _KARIN_MM_EXTENSIONS
 #include "qtm/qdeclarativeaudio_p.h"
 #include "qtm/qdeclarativeplaylist_p.h"
+#include "qtm/qdeclarativemediametadata_p.h"
 #endif
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
@@ -43,7 +44,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	qmdir = "i18n/";
 #else
 	qm = QString(ID_PKG ".") + locale;
-	qmdir = "/usr/share/" ID_PKG "/i18n/";
+	qmdir = adjustPath("i18n/");
 #endif
 #else
 #ifdef _DBG
@@ -74,7 +75,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 	qmlRegisterType<QDeclarativeAudio>(ID_QML_URI, ID_QML_MAJOR_VER, ID_QML_MINOR_VER, ID_APP "MediaPlayer");
 	qmlRegisterType<QDeclarativePlaylist>(ID_QML_URI, ID_QML_MAJOR_VER, ID_QML_MINOR_VER, ID_APP "Playlist");
 	qmlRegisterType<QDeclarativePlaylistItem>(ID_QML_URI, ID_QML_MAJOR_VER, ID_QML_MINOR_VER, ID_APP "PlaylistItem");
-	//qmlRegisterType<QDeclarativeMediaMetaData>();
+	qmlRegisterType<QDeclarativeMediaMetaData>();
 #endif
 	qmlRegisterUncreatableType<idNetworkConnector>(ID_QML_URI, ID_QML_MAJOR_VER, ID_QML_MINOR_VER, ID_APP "NetworkConnector", RegisterUncreatableTypeMsg.arg("idNetworkConnector"));
 	qmlRegisterUncreatableType<idPlayer>(ID_QML_URI, ID_QML_MAJOR_VER, ID_QML_MINOR_VER, ID_APP "Player", RegisterUncreatableTypeMsg.arg("idPlayer"));

@@ -1,29 +1,30 @@
 import QtQuick 2.0
+import Sailfish.Silica 1.0
 
 QtObject {
     id: root;
 		objectName: "idConstantsObject";
 
-    property int _iHeaderHeight: 96;
+    property int _iHeaderHeight: Theme.itemSizeSmall;
     property int _iHeaderZ: 100;
     property int _iMenuZ: 200;
     property color _cHeaderTitleColor: "#ffffff";
 
     property int _iMaxZ: 999;
-		property int _iMaxWidth: 720;
-		property int _iMaxHeight: 1280;
+		property int _iMaxWidth: Screen.width;
+		property int _iMaxHeight: Screen.height;
 
     property int _iFontMicro: 16;
     property int _iFontTiny: 18;
     property int _iFontSmall: 20;
     property int _iFontMedium: 24;
-    property int _iFontLarge: 32;
-    property int _iFontXL: 36;
-    property int _iFontXXL: 40;
+    property int _iFontLarge: 28;
+    property int _iFontXL: 32;
+    property int _iFontXXL: 36;
     property int _iFontXXXL: 48;
-    property int _iFontBig: 64;
-    property int _iFontTooBig: 72;
-    property int _iFontSuper: 80;
+    property int _iFontBig: 56;
+    property int _iFontTooBig: 64;
+    property int _iFontSuper: 72;
 
 
 		property int _iSpacingMicro: 2;
@@ -39,14 +40,14 @@ QtObject {
 		property int _iSpacingSuper: 48;
 
 
-    property int _iSizeMicro: 6;
+    property int _iSizeMicro: 8;
     property int _iSizeTiny: 18;
     property int _iSizeSmall: 32;
     property int _iSizeMedium: 48;
     property int _iSizeLarge: 64;
     property int _iSizeXL: 96;
     property int _iSizeXXL: 128;
-    property int _iSizeXXXL: 180;
+    property int _iSizeXXXL: 196;
     property int _iSizeBig: 240;
     property int _iSizeTooBig: 320;
     property int _iSizeSuper: 360;
@@ -169,6 +170,23 @@ QtObject {
 		property int _eChannelType: 8;
 		property int _eLiveType: 9;
 
+
+
+		function _GetTypeName(t)
+		{
+			var type = Number(t);
+			switch(type)
+			{
+				case _eVideoType: return qsTr("Video");
+				case _eArticleType: return qsTr("Article");
+				case _eBangumiType: return qsTr("Bangumi");
+				case _eUserType: return qsTr("User");
+				case _eAdType: return qsTr("Ad");
+				case _eKeywordType: return qsTr("Keyword");
+				case _eLiveType: return qsTr("Live");
+				default: return qsTr("Other");
+			}
+		}
 
 		function _GetLevelColor(lvl)
 		{

@@ -18,7 +18,7 @@
 #include "networkmanager.h"
 #include "id_std.h"
 
-#define ID_SETTING_VERSION 2
+#define ID_SETTING_VERSION 3
 
 namespace id
 {
@@ -326,7 +326,7 @@ QVariant idUtility::Changelog(const QString &version) const
 	if(version.isEmpty())
 	{
 		list 
-			<< QObject::tr("Initial versison on Sailfish OS.")
+			<< QObject::tr("Add live.")
 			<< QObject::tr("Some fixed.");
 	}
 

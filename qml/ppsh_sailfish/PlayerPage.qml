@@ -3,7 +3,6 @@ import Sailfish.Silica 1.0
 import "component"
 import "../js/main.js" as Script
 import "../js/util.js" as Util
-import Nemo.KeepAlive 1.1
 
 BasePage {
 	id: root;
@@ -62,6 +61,7 @@ BasePage {
 			if(aid == "") return;
 
 			if(type === constants._eBangumiType) __GetBangumi();
+			else if(type === constants._eLiveType) __GetLive();
 			else __GetVideo();
 		}
 
@@ -116,14 +116,35 @@ BasePage {
 
 			Script.GetBangumiDetail(d, s, f);
 		}
-	}
 
-    Component.onCompleted: {
-        DisplayBlanking.preventBlanking = true;
-    }
+		function __GetLive()
+		{
+			root.bBusy = true;
+
+			var model = [];
+			var d = {
+				quality_model: model,
+				rid: aid,
+			};
+
+			Util.ModelClear(contents);
+
+			var s = function(data){
+				root.bBusy = false;
+				obj.contents = d.quality_model; 
+				var r = loader._Load(obj.aid, obj.contents, undefined, type);
+				if(r < 0) controller._ShowMessage(qsTr("Load video player fail"));
+			};
+			var f = function(err){
+				root.bBusy = false;
+				controller._ShowMessage(err);
+			};
+
+			Script.GetLiveQualityStreams(d, s, f);
+		}
+	}
 
 	Component.onDestruction: {
 		loader._DeInit();
-        DisplayBlanking.preventBlanking = false;
 	}
 }
