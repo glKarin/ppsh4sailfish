@@ -13,7 +13,7 @@ Dialog {
 	property alias acceptText: header.acceptText;
 	property alias rejectText: header.cancelText;
 
-	property int __compUsed: header.height + footer.height + Theme.paddingSmall * 2;
+	property int __compUsed: separator.height + header.height + footer.height + Theme.paddingSmall * 2;
 	property int __contentHeight: Math.max(genericDialog.height - __compUsed, 360);
 
 	property bool __isClosing: false;
@@ -36,11 +36,19 @@ Dialog {
 		title: genericDialog.titleText;
 	}
 
+	Separator{
+		id: separator;
+		anchors.top: header.bottom;
+		anchors.horizontalCenter: parent.horizontalCenter;
+		width: parent.width - Theme.horizontalPageMargin * 2;
+		color: Theme.secondaryColor;
+	}
+
 	Item {
 		id: contentField;
 		anchors.left: parent.left;
 		anchors.right: parent.right;
-		anchors.top: header.bottom;
+		anchors.top: separator.bottom;
 		anchors.topMargin: Theme.paddingSmall;
 		height: childrenRect.height;
 	}

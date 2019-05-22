@@ -83,7 +83,7 @@
         <translation type="unfinished">热评</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/ArticlePage.qml" line="175"/>
+        <location filename="../qml/ppsh_sailfish/ArticlePage.qml" line="176"/>
         <source>Refresh</source>
         <translation type="unfinished">刷新</translation>
     </message>
@@ -273,7 +273,7 @@
 <context>
     <name>CommentListWidget</name>
     <message>
-        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="23"/>
+        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="26"/>
         <source>No content</source>
         <translation type="unfinished">无内容</translation>
     </message>
@@ -281,6 +281,37 @@
         <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="158"/>
         <source>Like</source>
         <translation type="unfinished">顶</translation>
+    </message>
+    <message>
+        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="166"/>
+        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="298"/>
+        <source>Reply</source>
+        <translation type="unfinished">评论量</translation>
+    </message>
+    <message>
+        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="210"/>
+        <source>View total</source>
+        <translation type="unfinished">查看全部</translation>
+    </message>
+    <message>
+        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="350"/>
+        <source>First</source>
+        <translation type="unfinished">首页</translation>
+    </message>
+    <message>
+        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="351"/>
+        <source>Previous</source>
+        <translation type="unfinished">前一页</translation>
+    </message>
+    <message>
+        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="352"/>
+        <source>Next</source>
+        <translation type="unfinished">下一页</translation>
+    </message>
+    <message>
+        <location filename="../qml/ppsh_sailfish/component/CommentListWidget.qml" line="353"/>
+        <source>Last</source>
+        <translation type="unfinished">尾页</translation>
     </message>
 </context>
 <context>
@@ -311,47 +342,47 @@
         <translation type="unfinished">基紫</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="180"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="181"/>
         <source>Video</source>
         <translation type="unfinished">视频</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="181"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="182"/>
         <source>Article</source>
         <translation type="unfinished">文章</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="182"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="183"/>
         <source>Bangumi</source>
         <translation type="unfinished">番剧</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="183"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="184"/>
         <source>User</source>
         <translation type="unfinished">用户</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="184"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="185"/>
         <source>Ad</source>
         <translation type="unfinished">广告</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="185"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="186"/>
         <source>Keyword</source>
         <translation type="unfinished">关键词</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="186"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="187"/>
         <source>Live</source>
         <translation type="unfinished">直播</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="187"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="188"/>
         <source>Other</source>
         <translation type="unfinished">其他</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="201"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="202"/>
         <source>Super VIP</source>
         <translation type="unfinished">年度大会员</translation>
     </message>
@@ -381,7 +412,7 @@
         <translation type="unfinished">原画(1080P)</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/Constants.qml" line="201"/>
+        <location filename="../qml/ppsh_sailfish/Constants.qml" line="202"/>
         <source>VIP</source>
         <translation type="unfinished">大会员</translation>
     </message>
@@ -531,97 +562,97 @@
         <translation type="unfinished">直播详情</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="71"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="72"/>
         <source>Loading video player...</source>
         <translation type="unfinished">正在加载播放器......</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="73"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="74"/>
         <source>Load video player fail</source>
         <translation type="unfinished">加载播放器失败</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="76"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="77"/>
         <source>Hold player to switch fullscreen or normal</source>
         <translation type="unfinished">长按播放器切换全屏</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="131"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="133"/>
         <source>Online</source>
         <translation type="unfinished">在线</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="132"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="134"/>
         <source>Follower</source>
         <translation type="unfinished">粉丝</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="133"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="135"/>
         <source>Room ID</source>
         <translation type="unfinished">房间ID</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="169"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="171"/>
         <source>Female</source>
         <translation type="unfinished">女</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="169"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="171"/>
         <source>Male</source>
         <translation type="unfinished">男</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="187"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="189"/>
         <source>Coming soon...</source>
         <translation type="unfinished">暂未实现...</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="287"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="290"/>
         <source>Living</source>
         <translation type="unfinished">直播中</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="287"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="290"/>
         <source>Not living</source>
         <translation type="unfinished">未直播</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="296"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="299"/>
         <source>Room is not living</source>
         <translation type="unfinished">房间休息中</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="300"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="303"/>
         <source>room Id is empty</source>
         <translation type="unfinished">房间号为空</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="314"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="317"/>
         <source>Danmaku</source>
         <translation type="unfinished">弹幕</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="323"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="326"/>
         <source>Streams</source>
         <translation type="unfinished">视频流</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="331"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="334"/>
         <source>Description</source>
         <translation type="unfinished">简介</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="337"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="340"/>
         <source>Recommend</source>
         <translation type="unfinished">相关</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="365"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="368"/>
         <source>Not support</source>
         <translation type="unfinished">不支持</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="494"/>
+        <location filename="../qml/ppsh_sailfish/LiveDetailPage.qml" line="497"/>
         <source>Bilibili verify</source>
         <translation type="unfinished">Bilibili个人认证</translation>
     </message>
@@ -726,14 +757,14 @@
 <context>
     <name>PlayerPage</name>
     <message>
-        <location filename="../qml/ppsh_sailfish/PlayerPage.qml" line="14"/>
+        <location filename="../qml/ppsh_sailfish/PlayerPage.qml" line="13"/>
         <source>Player</source>
         <translation type="unfinished">播放器</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/PlayerPage.qml" line="85"/>
-        <location filename="../qml/ppsh_sailfish/PlayerPage.qml" line="111"/>
-        <location filename="../qml/ppsh_sailfish/PlayerPage.qml" line="137"/>
+        <location filename="../qml/ppsh_sailfish/PlayerPage.qml" line="84"/>
+        <location filename="../qml/ppsh_sailfish/PlayerPage.qml" line="110"/>
+        <location filename="../qml/ppsh_sailfish/PlayerPage.qml" line="136"/>
         <source>Load video player fail</source>
         <translation type="unfinished">加载播放器失败</translation>
     </message>
@@ -775,8 +806,8 @@
     </message>
     <message>
         <location filename="../src/utility.cpp" line="329"/>
-        <source>Add live.</source>
-        <translation type="unfinished">新增直播</translation>
+        <source>Add view full comment and reply.</source>
+        <translation type="unfinished">新增查看完整评论和回复</translation>
     </message>
     <message>
         <location filename="../src/utility.cpp" line="330"/>
@@ -1260,34 +1291,34 @@
 <context>
     <name>VideoPlayer</name>
     <message>
-        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="23"/>
-        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="63"/>
+        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="24"/>
+        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="64"/>
         <source>ERROR</source>
         <translation type="unfinished">错误</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="266"/>
+        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="267"/>
         <source>Part</source>
         <translation type="unfinished">分段</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="266"/>
+        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="267"/>
         <source>Eposode</source>
         <translation type="unfinished">选集</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="410"/>
+        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="411"/>
         <source>Dash format(extras audio maybe not synchronize with video)...</source>
         <translation type="unfinished">Dash格式视频(外部音频播放可能不同步)</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="425"/>
+        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="426"/>
         <source>Waiting KMPlayer for playing video(If can not play, please set MPlayer for decoding)...</source>
         <translation type="unfinished">等待启动KMPlayer播放器(如果KMPlayer无法播放, 请设置KMPlayer播放器为MPlayer)</translation>
     </message>
     <message>
-        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="443"/>
-        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="464"/>
+        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="444"/>
+        <location filename="../qml/ppsh_sailfish/component/VideoPlayer.qml" line="465"/>
         <source>Can not support seek for this video</source>
         <translation type="unfinished">视频不支持定位</translation>
     </message>
@@ -1303,76 +1334,76 @@
 <context>
     <name>api</name>
     <message>
-        <location filename="../qml/js/api.js" line="549"/>
+        <location filename="../qml/js/api.js" line="564"/>
         <source>All</source>
         <translation type="unfinished">全部</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="206"/>
-        <location filename="../qml/js/api.js" line="527"/>
+        <location filename="../qml/js/api.js" line="207"/>
+        <location filename="../qml/js/api.js" line="542"/>
         <source>Play</source>
         <translation type="unfinished">播放</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="148"/>
+        <location filename="../qml/js/api.js" line="149"/>
         <source>score</source>
         <translation type="unfinished">分</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="163"/>
-        <location filename="../qml/js/api.js" line="587"/>
+        <location filename="../qml/js/api.js" line="164"/>
+        <location filename="../qml/js/api.js" line="602"/>
         <source>View</source>
         <translation type="unfinished">阅读量</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="167"/>
+        <location filename="../qml/js/api.js" line="168"/>
         <source>Like</source>
         <translation type="unfinished">喜欢</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="171"/>
-        <location filename="../qml/js/api.js" line="591"/>
+        <location filename="../qml/js/api.js" line="172"/>
+        <location filename="../qml/js/api.js" line="606"/>
         <source>Reply</source>
         <translation type="unfinished">评论量</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="182"/>
+        <location filename="../qml/js/api.js" line="183"/>
         <source>Living</source>
         <translation type="unfinished">直播中</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="182"/>
+        <location filename="../qml/js/api.js" line="183"/>
         <source>Unlive</source>
         <translation type="unfinished">不喜欢</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="187"/>
+        <location filename="../qml/js/api.js" line="188"/>
         <source>Online</source>
         <translation type="unfinished">在线量</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="191"/>
+        <location filename="../qml/js/api.js" line="192"/>
         <source>Category</source>
         <translation type="unfinished">频道</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="210"/>
-        <location filename="../qml/js/api.js" line="531"/>
+        <location filename="../qml/js/api.js" line="211"/>
+        <location filename="../qml/js/api.js" line="546"/>
         <source>Danmaku</source>
         <translation type="unfinished">弹幕</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="1088"/>
+        <location filename="../qml/js/api.js" line="1103"/>
         <source>Unknow quality</source>
         <translation type="unfinished">未知清晰度</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="125"/>
+        <location filename="../qml/js/api.js" line="126"/>
         <source>fans</source>
         <translation type="unfinished">粉丝</translation>
     </message>
     <message>
-        <location filename="../qml/js/api.js" line="129"/>
+        <location filename="../qml/js/api.js" line="130"/>
         <source>archives</source>
         <translation type="unfinished">投稿</translation>
     </message>
@@ -1615,7 +1646,7 @@
         <translation type="unfinished">关于</translation>
     </message>
     <message>
-        <location filename="../qml/js/main.js" line="984"/>
+        <location filename="../qml/js/main.js" line="1019"/>
         <source>Get danmaku data fail</source>
         <translation type="unfinished">获取弹幕失败</translation>
     </message>

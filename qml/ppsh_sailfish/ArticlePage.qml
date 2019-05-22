@@ -159,6 +159,7 @@ BasePage {
 				anchors.top: typerow.bottom;
 				anchors.bottom: parent.bottom;
 				bHasMore: obj.pageNo < obj.pageCount;
+				aid: obj.aid;
 				onRefresh: {
 					obj._GetComment();
 				}

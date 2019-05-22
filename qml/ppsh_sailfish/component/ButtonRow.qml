@@ -1,10 +1,11 @@
 import QtQuick 2.0
+import Sailfish.Silica 1.0
 import "itemlist.js" as L
 
 Row{
 	id: root;
 	objectName: "idButtonRow";
-	height: Theme.horizontalPageMargin;
+	height: Theme.itemSizeExtraSmall;
 	clip: true;
 
 	property bool exclusive: true;

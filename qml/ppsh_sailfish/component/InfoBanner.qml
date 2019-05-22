@@ -19,7 +19,8 @@ Item{
 
 	function show()
 	{
-		docked.show();
+		if(root.timerEnabled && docked.open && timer.running) timer.restart();
+		else docked.show();
 	}
 
 	function hide()

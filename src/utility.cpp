@@ -18,7 +18,7 @@
 #include "networkmanager.h"
 #include "id_std.h"
 
-#define ID_SETTING_VERSION 3
+#define ID_SETTING_VERSION 5
 
 namespace id
 {
@@ -326,7 +326,7 @@ QVariant idUtility::Changelog(const QString &version) const
 	if(version.isEmpty())
 	{
 		list 
-			<< QObject::tr("Add live.")
+			<< QObject::tr("Add view full comment and reply.")
 			<< QObject::tr("Some fixed.");
 	}
 

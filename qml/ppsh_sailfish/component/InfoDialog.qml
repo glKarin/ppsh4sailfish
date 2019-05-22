@@ -11,6 +11,7 @@ HarmattanCommonDialog {
 	property alias vNu: layout.vNu;
 	property variant sBottomTitle: "";
 	signal linkClicked(string link);
+	signal footerClicked(string link);
 	signal clicked;
 
 	Item{
@@ -26,10 +27,10 @@ HarmattanCommonDialog {
 			TextListWidget{
 				id: layout;
 				width: parent.width;
-				onClicked: root.clicked();
+				onClicked: root.__LinkClicked(undefined, 1);
 				iPixelSize: constants._iFontXL;
-				cColor: "#ffffff";
-				onLinkClicked: root.linkClicked(link);
+				cColor: Theme.primaryColor;
+				onLinkClicked: root.__LinkClicked(link);
 			}
 		}
 
@@ -45,16 +46,30 @@ HarmattanCommonDialog {
 			horizontalAlignment: Text.AlignHCenter;
 			verticalAlignment: Text.AlignVCenter;
 			text: root.sBottomTitle;
-			color: constants._cLightestColor;
+			color: Theme.primaryColor;
 			font.bold: true;
-			font.pixelSize: constants._iFontXL;
+			font.pixelSize: constants._iFontXXL;
 			wrapMode: Text.WordWrap;
 			elide: Text.ElideRight;
 			maximumLineCount: 2;
-			onLinkActivated: {
-				if(link !== "") eval(link);
-			}
+			onLinkActivated: root.__LinkClicked(link, 2);
+
 		}
 	]
 
+	function __LinkClicked(link, where)
+	{
+		//root.accept();
+		if(where == 2) root.footerClicked(link);
+		else if(where == 1) root.clicked();
+		else root.linkClicked(link);
+	}
+
+	function _Set(title, subtitle, content, bottom)
+	{
+		root.titleText = title;
+		root.sTitle = subtitle;
+		root.aTexts = content;
+		root.sBottomTitle = bottom || "";
+	}
 }

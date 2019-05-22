@@ -150,6 +150,7 @@ QtObject {
 		property string _sNextPage: "_Next";
 		property string _sThisPage: "_This";
 		property string _sFirstPage: "_First";
+		property string _sLastPage: "_Last";
 
 		property string _sShowState: "_Show";
 		property string _sHideState: "_Hide";
