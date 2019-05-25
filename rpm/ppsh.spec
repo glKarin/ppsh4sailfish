@@ -6,7 +6,7 @@ Name: ppsh
 Summary: PPSH is a web-video player for Bilibili.
 Vendor: karin <beyondk2000@gmail.com>
 Packager: karin <beyondk2000@gmail.com>
-Version: 43.0.6harmattan1
+Version: 43.0.6harmattan2
 Release: bilibili0
 # The contents of the Group field should be one of the groups listed here:
 # https://github.com/mer-tools/spectacle/blob/master/data/GROUPS
@@ -57,7 +57,8 @@ make INSTALL_ROOT=%{buildroot} install
 # build system, please see https://wiki.merproject.org/wiki/Spectacle
 
 %changelog
-* Sat May 21 2019 Karin Zhao <beyondk2000@gmail.com> - 43.0.6harmattan1
+* Fri May 24 2019 Karin Zhao <beyondk2000@gmail.com> - 43.0.6harmattan2
+ * Fixed layout.
  * Add view full comment and reply.
  * Add live, include search.
  * Close screen saver when playing by 0312birdzhang.

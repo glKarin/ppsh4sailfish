@@ -5,6 +5,11 @@ QtObject {
     id: root;
 		objectName: "idConstantsObject";
 
+        property int _iHarmattanWidth: 480;
+        property int _iHarmattanHeight: 854;
+
+        property real __fScreenScaler: (Screen.width / _iHarmattanWidth + Screen.height / _iHarmattanHeight) / 2;
+
     property int _iHeaderHeight: Theme.itemSizeSmall;
     property int _iHeaderZ: 100;
     property int _iMenuZ: 200;
@@ -14,6 +19,46 @@ QtObject {
 		property int _iMaxWidth: Screen.width;
 		property int _iMaxHeight: Screen.height;
 
+
+        property int _iFontMicro: 10 * __fScreenScaler;
+           property int _iFontTiny: 12 * __fScreenScaler;
+           property int _iFontSmall: 16 * __fScreenScaler;
+           property int _iFontMedium: 18 * __fScreenScaler;
+           property int _iFontLarge: 20 * __fScreenScaler;
+           property int _iFontXL: 24 * __fScreenScaler;
+           property int _iFontXXL: 28 * __fScreenScaler;
+           property int _iFontXXXL: 32 * __fScreenScaler;
+           property int _iFontBig: 40 * __fScreenScaler;
+           property int _iFontTooBig: 48 * __fScreenScaler;
+           property int _iFontSuper: 64 * __fScreenScaler;
+
+
+               property int _iSpacingMicro: 1 * __fScreenScaler;
+               property int _iSpacingTiny: 2 * __fScreenScaler;
+               property int _iSpacingSmall: 4 * __fScreenScaler;
+               property int _iSpacingMedium: 6 * __fScreenScaler;
+               property int _iSpacingLarge: 8 * __fScreenScaler;
+               property int _iSpacingXL: 10 * __fScreenScaler;
+               property int _iSpacingXXL: 12 * __fScreenScaler;
+               property int _iSpacingXXXL: 16 * __fScreenScaler;
+               property int _iSpacingBig: 18 * __fScreenScaler;
+               property int _iSpacingTooBig: 20 * __fScreenScaler;
+               property int _iSpacingSuper: 24 * __fScreenScaler;
+
+
+           property int _iSizeMicro: 4 * __fScreenScaler;
+           property int _iSizeTiny: 16 * __fScreenScaler;
+           property int _iSizeSmall: 24 * __fScreenScaler;
+           property int _iSizeMedium: 32 * __fScreenScaler;
+           property int _iSizeLarge: 48 * __fScreenScaler;
+           property int _iSizeXL: 64 * __fScreenScaler;
+           property int _iSizeXXL: 80 * __fScreenScaler;
+           property int _iSizeXXXL: 128 * __fScreenScaler;
+           property int _iSizeBig: 180 * __fScreenScaler;
+           property int _iSizeTooBig: 240 * __fScreenScaler;
+           property int _iSizeSuper: 320 * __fScreenScaler;
+
+        /*
     property int _iFontMicro: 16;
     property int _iFontTiny: 18;
     property int _iFontSmall: 20;
@@ -51,6 +96,7 @@ QtObject {
     property int _iSizeBig: 240;
     property int _iSizeTooBig: 320;
     property int _iSizeSuper: 360;
+    */
 
 
 		property color _cLightestColor: !_bInverted ? "#ffffff" : "#000000";
